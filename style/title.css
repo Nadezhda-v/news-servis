@@ -1,0 +1,17 @@
+.title__wrapper {
+  border-top: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 26px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 18px;
+  }
+}

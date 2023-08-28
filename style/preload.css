@@ -1,0 +1,8 @@
+.preload {
+  background-repeat: no-repeat;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  margin: 0 auto;
+  animation: rotating 2s linear infinite;
+}
