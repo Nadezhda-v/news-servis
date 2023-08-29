@@ -51,7 +51,7 @@ const renderNews = (err, data) => {
   });
 
   fragment.append(...news);
-  console.log(images);
+  
   return {fragment, images};
 };
 
