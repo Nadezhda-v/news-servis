@@ -11,7 +11,11 @@ import {
 import preload from './preload.js';
 import fetchRequest from './fetchRequest.js';
 import renderNews from './renderNews.js';
-import {updateTitleRequest, showImage} from './common.js';
+import {
+  updateTitleRequest,
+  showImage,
+  clearNewsLists,
+} from './common.js';
 
 const countryToLanguageMap = {
   ru: 'ru', // Россия: русский язык
@@ -19,7 +23,7 @@ const countryToLanguageMap = {
   de: 'de', // Германия: немецкий язык
   fr: 'fr', // Франция: французский язык
   gb: 'en', // Великобритания: английский язык
-  sv: 'sv', // Швеция: шведский язык
+  se: 'sv', // Швеция: шведский язык
 };
 
 const searchNewsControl = () => {
@@ -27,26 +31,25 @@ const searchNewsControl = () => {
 
   formSearch.addEventListener('submit', async (e) => {
     e.preventDefault();
-  
+
     if (isLoading) {
       return;
     }
-  
+
     const selectedValue = choiceCountry.value;
     const selectedLanguage = countryToLanguageMap[selectedValue];
     const query = formSearch.search.value;
-  
+
     if (!query || !selectedValue) return;
-  
+
     const pageSizeTop = 4;
     const pageSizeSearch = 8;
-  
-    newsListTop.innerHTML = '';
-    newsListRequest.innerHTML = '';
+
+    clearNewsLists();
     titleWrapperRequest.classList.add('visually-hidden');
     titleWrapperTop.classList.add('visually-hidden');
     preload.show();
-  
+
     try {
       isLoading = true;
       const [searchNewsResponse, topNewsResponse] = await Promise.all([
@@ -99,4 +102,6 @@ const searchNewsControl = () => {
   });
 }
 
-export default searchNewsControl;
+export {
+  searchNewsControl,
+};

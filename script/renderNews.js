@@ -36,13 +36,14 @@ const renderNews = (err, data) => {
       ${item.description ?
         `<p class="news__description">${item.description}</p>` : ''}
       <div class="news__footer">
-        <time class="news__datetime" datetime="${item.publishedAt}">
+      ${item.publishedAt ? 
+        `<time class="news__datetime" datetime="${item.publishedAt}">
           <span class="news__date">
             ${item.publishedAt.substring(8, 10)}/
             ${item.publishedAt.substring(5, 7)}/
             ${item.publishedAt.substring(0, 4)}
           </span> ${item.publishedAt.substring(11, 16)}
-        </time>
+        </time>` : ''}
         ${item.author ? `<p class="news__author">${item.author}</p>` : ''}
       </div>
     `;

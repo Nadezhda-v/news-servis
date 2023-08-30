@@ -1,5 +1,7 @@
 import {
   titleRequest,
+  newsListTop,
+  newsListRequest,
 } from './getElements.js';
 
 const setDefaultImage = (img) => {
@@ -54,9 +56,15 @@ const updateTitleRequest = (countSearchResults, query) => {
   titleRequest.textContent = titleText;
 };
 
+const clearNewsLists = () => {
+  newsListTop.innerHTML = '';
+  newsListRequest.innerHTML = '';
+}
+
 export {
   setDefaultImage,
   showImage,
   updateTitleRequest,
   getResultWithNumber,
+  clearNewsLists,
 };
