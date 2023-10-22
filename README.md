@@ -1,7 +1,7 @@
 <h1 align="center">Приложение для поиска новостей</h1>
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/109743172/267305510-34d44621-9d99-47a8-8905-85855b525727.png" width="700" alt="Демонстрация приложения">
+  <img src="https://user-images.githubusercontent.com/109743172/277175156-0efd963e-f39b-4129-a8b7-98fd53cde33b.jpg" width="700" alt="Демонстрация приложения">
 </div>
 
 <h2>Описание проекта</h2>
